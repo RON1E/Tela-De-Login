@@ -47,6 +47,17 @@ def verifica_senha():
         messagebox.showinfo('Login', 'Seja bem vindo Admin !!!')
     elif credenciais[0] == nome and credenciais[1] == senha:
         messagebox.showinfo('Login', 'Seja bem vindo de volta {} !!! '.format(credenciais[0]))
+
+        # deletar intes em fram cima e frame baixo
+
+        for widget in frame_baixo.winfo_children():
+            widget.destroy()
+
+        for widget in frame_cima.winfo_children():
+            widget.destroy()
+
+        nova_janela()
+
     else:
         messagebox.showwarning('Erro', 'Verifique o nome e a senha')
 
